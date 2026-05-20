@@ -43,7 +43,7 @@ const Navbar = () => {
                 </div>
                 <div className="browse__overlay">
                     <ul>
-                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/home">Home</Link></li>
                         <li><Link to="/tv-shows">TV Shows</Link></li>
                         <li><Link to="/movies">Movies</Link></li>
                         <li style={{ cursor: "not-allowed" }}>Games</li>
