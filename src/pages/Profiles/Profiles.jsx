@@ -70,7 +70,7 @@ const Profiles = () => {
 
   const handleChooseProfile = (profile) => {
     chooseProfile(profile);
-    navigate("/");
+    navigate("/home");
   };
 
   const handleAddProfile = (e) => {

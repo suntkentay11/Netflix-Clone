@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Navbar from './components/NavBar/Navbar'
 import TVShows from './pages/TVShows/TVShows'
@@ -22,7 +22,8 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/profiles" element={<Profiles />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/tv-shows" element={<TVShows />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/new-popular" element={<NewPopular />} />
