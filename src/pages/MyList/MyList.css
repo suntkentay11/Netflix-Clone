@@ -1,0 +1,43 @@
+.mylist {
+  min-height: 100vh;
+  background: #111;
+  color: white;
+  padding: 120px 40px 40px;
+}
+
+.mylist__header {
+  margin-bottom: 40px;
+}
+
+.mylist__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px 16px;
+}
+
+.mylist__card {
+  cursor: pointer;
+}
+
+.mylist__card img {
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.25s ease;
+}
+
+.mylist__card:hover img {
+  transform: scale(1.04);
+}
+
+.mylist__empty {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.mylist__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px 16px;
+}

@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.top-ten__wrapper {
+    position: relative;
+}
+
+.top-ten {
+    color: white;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+.top-ten h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.top-ten__items {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0 20px;
+}
+
+.top-ten__items::-webkit-scrollbar {
+    display: none;
+}
+
+.top-ten__item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 285px;
+  height: 210px;
+  cursor: pointer;
+}
+
+.top-ten__rank {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 170px;
+  height: 220px;
+  z-index: 1;
+}
+
+.top-ten__rank-text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 210px;
+  font-weight: 900;
+  fill: #000;
+  stroke: #595959;
+  stroke-width: 5px;
+  paint-order: stroke fill;
+}
+
+.top-ten__item--ten {
+  width: 330px;
+  letter-spacing: -35px;
+}
+
+.top-ten__item--ten .top-ten__rank {
+  width: 230px;
+}
+
+.top-ten__item--ten .top-ten__poster {
+  left: 170px;
+}
+
+.top-ten__poster {
+  position: absolute;
+  left: 115px;
+  bottom: 10px;
+  width: 135px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.top-ten__item:hover .top-ten__poster {
+    transform: scale(1.08);
+}
+
+.top-ten__number--ten {
+  left: -24px;
+  letter-spacing: -18px;
+  transform: scaleX(0.78);
+}
+
+.top-ten__item:has(.top-ten__number--ten) .top-ten__poster {
+  left: 138px;
+}
+
+.row__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70%;
+  width: 42px;
+  border: none;
+  color: white;
+  background: rgba(0, 0, 0, 0.55);
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 100000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.top-ten__wrapper:hover .row__arrow {
+  opacity: 1;
+}
+
+.row__arrow--left {
+  left: 0;
+}
+
+.row__arrow--right {
+  right: 0;
+}

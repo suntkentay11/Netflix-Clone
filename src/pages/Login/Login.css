@@ -1,0 +1,226 @@
+.login {
+    height: 100vh;
+    background-image: linear-gradient(#0000007e, #0000007e), url('/background_banner.jpg');
+    padding: 20px 8%;
+    position: relative;
+}
+
+.logo{
+    width: 150px;
+}
+
+.login__logo {
+    width: 100%;
+}
+
+
+.login__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login__box h1{
+    font-size: 2.5rem;
+}
+
+.login__box form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.login__box form input{
+    padding: 10px;
+    width: 300px;
+    background: #333;
+    border: none;
+    color: white;
+    border-radius: 4px;
+}
+
+.login__box form button{
+    padding: 10px;
+    width: 300px;
+    background: #e50914;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-help{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.remember{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.remember__checkbox{
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.form-help p{
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.login__signup{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+}
+
+.login__signup span{
+    cursor: pointer;
+}
+
+.login__signup span:hover{
+    text-decoration: underline;
+}
+
+
+/* MODAL OVERLAY */
+
+.signup-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5000;
+
+  backdrop-filter: blur(5px);
+}
+
+/* MODAL */
+
+.signup-modal {
+  position: relative;
+
+  width: 420px;
+
+  background: #181818;
+
+  padding: 40px;
+
+  border-radius: 6px;
+
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.45);
+
+  animation: modalFade 0.25s ease;
+}
+
+.signup-modal h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.signup-modal input {
+  width: 100%;
+  height: 50px;
+
+  margin-bottom: 16px;
+
+  padding: 0 14px;
+
+  background: #333;
+
+  border: none;
+  border-radius: 4px;
+
+  color: white;
+
+  font-size: 1rem;
+}
+
+.signup-modal__button {
+  width: 100%;
+  height: 50px;
+
+  margin-top: 10px;
+
+  background: #e50914;
+
+  color: white;
+
+  border: none;
+  border-radius: 4px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.signup-modal__button:hover {
+  background: #f6121d;
+}
+
+/* CLOSE BUTTON */
+
+.signup-modal__close {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  background: transparent;
+  border: none;
+
+  color: white;
+
+  font-size: 1.3rem;
+
+  cursor: pointer;
+}
+
+/* SIGNUP LINK */
+
+.login__signup span {
+  color: white;
+  cursor: pointer;
+}
+
+.login__signup span:hover {
+  text-decoration: underline;
+}
+
+/* ANIMATION */
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
