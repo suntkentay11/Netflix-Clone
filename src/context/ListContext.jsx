@@ -49,25 +49,25 @@ export const ListProvider = ({ children }) => {
     localStorage.setItem("activeProfile", JSON.stringify(profile));
   };
 
-  const addToMyList = (movie) => {
+//   const addToMyList = (movie) => {
+//     if (!storageKey) return;
+
+//     setMyList((prevList) => {
+//       const alreadyAdded = prevList.some((item) => item.id === movie.id);
+
+//       if (alreadyAdded) {
+//         return prevList.filter((item) => item.id !== movie.id);
+//       }
+
+//       return [...prevList, movie];
+//     });
+
+    const addToMyList = (movie) => {
+    console.log("ADDING TO MY LIST");
+    console.log("activeProfile:", activeProfile);
+    console.log("storageKey:", storageKey);
+
     if (!storageKey) return;
-
-    setMyList((prevList) => {
-      const alreadyAdded = prevList.some((item) => item.id === movie.id);
-
-      if (alreadyAdded) {
-        return prevList.filter((item) => item.id !== movie.id);
-      }
-
-      return [...prevList, movie];
-    });
-
-    // const addToMyList = (movie) => {
-    // console.log("ADDING TO MY LIST");
-    // console.log("activeProfile:", activeProfile);
-    // console.log("storageKey:", storageKey);
-
-    // if (!storageKey) return;
 
     setMyList((prevList) => {
         const alreadyAdded = prevList.some((item) => item.id === movie.id);
