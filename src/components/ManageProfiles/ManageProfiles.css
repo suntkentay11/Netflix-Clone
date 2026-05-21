@@ -1,0 +1,134 @@
+.manage-profiles__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  z-index: 6000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.manage-profiles {
+  position: relative;
+  width: min(760px, 92vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  background: #181818;
+  color: white;
+  border-radius: 6px;
+  padding: 36px;
+}
+
+.manage-profiles h2 {
+  font-size: 2rem;
+  margin-bottom: 28px;
+}
+
+.manage-profiles__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.manage-profiles__list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.manage-profile {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 24px;
+}
+
+.manage-profile__avatar {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.manage-profile__content {
+  flex: 1;
+}
+
+.manage-profile__top,
+.manage-profile__edit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.manage-profile__top h3 {
+  font-size: 1.4rem;
+}
+
+.manage-profile button,
+.manage-profiles__done {
+  background: transparent;
+  color: white;
+  border: 1px solid #777;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.manage-profile button:hover,
+.manage-profiles__done:hover {
+  border-color: white;
+}
+
+.manage-profile__edit input {
+  height: 40px;
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0 12px;
+  border-radius: 4px;
+}
+
+.manage-profile__avatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.manage-profile__avatar-option {
+  width: 56px;
+  height: 56px;
+  padding: 0 !important;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  background: none;
+}
+
+.manage-profile__avatar-option img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.manage-profile__avatar-option.active {
+  border-color: white !important;
+}
+
+.manage-profile__delete {
+  color: #e50914 !important;
+  border-color: #e50914 !important;
+}
+
+.manage-profiles__done {
+  margin-top: 28px;
+  background: white;
+  color: black;
+  font-weight: bold;
+}

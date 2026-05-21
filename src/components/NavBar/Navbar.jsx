@@ -67,7 +67,7 @@ const Navbar = () => {
                 <img src={caret_icon} alt="Caret" />
                 <div className="dropdown">
                     <div className="dropdown__item">
-                        <FontAwesomeIcon icon="pencil" className='icon' />
+                        <Link to="/profiles"><FontAwesomeIcon icon="pencil" className='icon' /></Link>
                         <p>Manage Profiles</p>
                     </div>
                     <div className="dropdown__item">

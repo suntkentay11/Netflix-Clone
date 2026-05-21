@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { useLists } from "../../context/ListContext";
 import "./Profiles.css";
+import ManageProfiles from "../../components/ManageProfiles/ManageProfiles";
 
 import Profile1 from "../../assets/avatars/Profile1.png";
 import Profile2 from "../../assets/avatars/Profile2.jpg";
@@ -26,6 +27,7 @@ const avatarOptions = [
 const Profiles = () => {
   const navigate = useNavigate();
   const { chooseProfile } = useLists();
+  const [showManageProfiles, setShowManageProfiles] = useState(false);
 
   const userId = auth.currentUser?.uid;
   const profilesKey = userId ? `profiles_${userId}` : "profiles_guest";
@@ -126,7 +128,12 @@ const Profiles = () => {
         </div>
       </div>
 
-      <button className="profiles__manage">Manage Profiles</button>
+      <button
+        className="profiles__manage"
+        onClick={() => setShowManageProfiles(true)}
+      >
+        Manage Profiles
+      </button>
 
       {showAddProfile && (
         <div
@@ -155,6 +162,16 @@ const Profiles = () => {
             </form>
           </div>
         </div>
+      )}
+
+      {showManageProfiles && (
+        <ManageProfiles
+          profiles={profiles}
+          setProfiles={setProfiles}
+          avatarOptions={avatarOptions}
+          kidsAvatar={ProfileKids}
+          onClose={() => setShowManageProfiles(false)}
+        />
       )}
     </div>
   );
