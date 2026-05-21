@@ -61,7 +61,6 @@ export const ListProvider = ({ children }) => {
 
       return [...prevList, movie];
     });
-  };
 
     // const addToMyList = (movie) => {
     // console.log("ADDING TO MY LIST");
@@ -109,6 +108,7 @@ export const ListProvider = ({ children }) => {
       {children}
     </ListContext.Provider>
   );
+};
 
 
 export const useLists = () => {
