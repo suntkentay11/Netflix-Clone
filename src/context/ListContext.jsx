@@ -13,7 +13,7 @@ export const ListProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
   const [listsLoaded, setListsLoaded] = useState(false);
 
-    const userId = auth.currentUser?.uid;
+    const userId = auth.currentUser?.uid || localStorage.getItem("activeUserId");
     const profileId = activeProfile?.id;
 
     const storageKey = userId && profileId ? `${userId}_${profileId}` : null;
@@ -63,6 +63,24 @@ export const ListProvider = ({ children }) => {
     });
   };
 
+    // const addToMyList = (movie) => {
+    // console.log("ADDING TO MY LIST");
+    // console.log("activeProfile:", activeProfile);
+    // console.log("storageKey:", storageKey);
+
+    // if (!storageKey) return;
+
+    setMyList((prevList) => {
+        const alreadyAdded = prevList.some((item) => item.id === movie.id);
+
+        if (alreadyAdded) {
+        return prevList.filter((item) => item.id !== movie.id);
+        }
+
+        return [...prevList, movie];
+    });
+    };
+
   const addToFavorites = (movie) => {
     if (!storageKey) return;
 
@@ -91,7 +109,7 @@ export const ListProvider = ({ children }) => {
       {children}
     </ListContext.Provider>
   );
-};
+
 
 export const useLists = () => {
   return useContext(ListContext);

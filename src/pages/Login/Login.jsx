@@ -17,23 +17,18 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      await login(loginEmail, loginPassword);
-      navigate("/profiles");
-    } catch (error) {
-      console.error(error);
+  e.preventDefault();
 
-      if (error.code === "auth/user-not-found" || error.code === "auth/invalid-credential") {
-        const shouldSignup = window.confirm("No account found with these credentials. Would you like to sign up?");
-        if (shouldSignup) {
-          setShowSignupModal(true);
-        }
-      } else {
-        alert(error.message);
-      }
-    }
+  try {
+    const userCredential = await login(loginEmail, loginPassword);
+
+    localStorage.setItem("activeUserId", userCredential.user.uid);
+
+    navigate("/profiles");
+  } catch (error) {
+    console.error(error);
   }
+};
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -41,9 +36,8 @@ const Login = () => {
     try {
       const newUser = await signup(name, email, password);
 
+      localStorage.setItem("activeUserId", newUser.uid);
       localStorage.setItem(`netflixUserName_${newUser.uid}`, name);
-      localStorage.removeItem(`profiles_${newUser.uid}`);
-      localStorage.removeItem("activeProfile");
 
       setShowSignupModal(false);
       navigate("/profiles");

@@ -5,6 +5,9 @@ import TitleCard from "../../components/TitleCard/TitleCard";
 import "./MyList.css";
 import HoverPreview from "../../components/Row/HoverPreview";
 
+const API_TOKEN = import.meta.env.VITE_TMDB_TOKEN;
+const BASE_URL = "https://api.themoviedb.org/3";
+
 const MyList = () => {
   const { myList, favorites, addToMyList, addToFavorites } = useLists();
   const [hoveredMovie, setHoveredMovie] = useState(null);

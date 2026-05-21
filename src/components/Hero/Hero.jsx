@@ -115,7 +115,7 @@ const Hero = ({ fetchUrl = "/movie/popular" }) => {
                     {isInMyList ? "In My List" : "Add to List"}
                 </button>
 
-                <button className="hero__button">
+                <button className="hero__button" style={{ cursor: "not-allowed" }} >
                     <FontAwesomeIcon icon="circle-info" />
                     More Info
                 </button>

@@ -20,6 +20,7 @@ const Navbar = () => {
     await logout();
 
     localStorage.removeItem("activeProfile");
+    localStorage.removeItem("activeUserId");
 
     navigate("/login");
     };
@@ -55,9 +56,14 @@ const Navbar = () => {
             </div>
         </div>
         <div className="navbar-right">
-            <img src={search_icon} alt="Search" className='icons' />
+            <img
+            src={search_icon}
+            alt="Search"
+            className="icons"
+            onClick={() => navigate("/search")}
+            />
             <p className='kids'>Kids</p>
-            <img src={bell_icon} alt="Notifications" className='icons' />
+            <img src={bell_icon} alt="Notifications" className='icons' style={{ cursor: "not-allowed" }} />
             <div className="navbar__profile">
                 <img
                     src={activeProfile?.avatar || profile_img}
@@ -67,20 +73,27 @@ const Navbar = () => {
                 <img src={caret_icon} alt="Caret" />
                 <div className="dropdown">
                     <div className="dropdown__item">
-                        <Link to="/profiles"><FontAwesomeIcon icon="pencil" className='icon' /></Link>
+                        <Link to="/profiles"><FontAwesomeIcon icon="pencil" className='icon' />
                         <p>Manage Profiles</p>
+                        </Link>
                     </div>
                     <div className="dropdown__item">
+                        <Link style={{ cursor: "not-allowed" }} to="#">
                         <FontAwesomeIcon icon="user-pen" className='icon' />
                         <p>Transfer Profiles</p>
+                        </Link>
                     </div>
                     <div className="dropdown__item">
+                        <Link style={{ cursor: "not-allowed" }} to="#">
                         <FontAwesomeIcon icon="user" className='icon' />
                         <p>Account</p>
+                        </Link>
                     </div>
                     <div className="dropdown__item">
+                        <Link style={{ cursor: "not-allowed" }} to="#">
                         <FontAwesomeIcon icon="question" className='icon' />
                         <p>Help Center</p>
+                        </Link>
                     </div>
                     <div className="sign__out">
                         <p onClick={handleSignOut}>Sign Out of Netflix</p>

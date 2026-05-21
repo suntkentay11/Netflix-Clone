@@ -9,6 +9,7 @@ import MyList from './pages/MyList/MyList'
 import GenrePage from './components/GenrePage/GenrePage'
 import Login from './pages/Login/Login'
 import Profiles from './pages/Profiles/Profiles'
+import Search from './pages/Search/Search'
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/movies" element={<Movies />} />
         <Route path="/new-popular" element={<NewPopular />} />
         <Route path="/my-list" element={<MyList />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/genre/:mediaType/:genreId/:genreName" element={<GenrePage />} />
       </Routes>
     </>
