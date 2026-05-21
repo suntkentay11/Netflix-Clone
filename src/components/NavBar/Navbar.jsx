@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className="navbar-left">
             <img src={logo} alt="Logo" />
             <ul className='nav__list'>
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/home">Home</Link></li>
                 <li><Link to="/tv-shows">Shows</Link></li>
                 <li><Link to="/movies">Movies</Link></li>
                 <li style={{ cursor: "not-allowed" }}>Games</li>
