@@ -26,7 +26,19 @@ const Login = () => {
 
     navigate("/profiles");
   } catch (error) {
-    console.error(error);
+    console.error(error)
+    
+    if (error.code === "auth/user-not-found" || error.code === "auth/invalid-credential" || error.code === "auth/wrong-password") {
+      const shouldSignup = window.confirm("Incorrect email or password. Would you like to create an account?");
+      if (shouldSignup) {
+        setEmail(loginEmail);
+        setPassword(loginPassword);
+
+        setShowSignupModal(true);
+      }
+    } else {
+      alert("An error occurred. Please try again.");
+    }
   }
 };
 
